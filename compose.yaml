@@ -1,0 +1,16 @@
+services:
+  vortex:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: vortex:latest
+    stdin_open: true
+    tty: true
+    env_file:
+      - .env
+    volumes:
+      - .:/workspace
+      - vortex-data:/data
+
+volumes:
+  vortex-data:
